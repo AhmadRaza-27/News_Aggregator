@@ -1,0 +1,346 @@
+.app-shell {
+  min-height: 100vh;
+  color: var(--text-main);
+}
+
+.container {
+  width: min(1380px, 92%);
+  margin: 0 auto;
+  padding: 34px 0 64px;
+}
+
+/* NAVBAR */
+.navbar {
+  width: min(1380px, 92%);
+  margin: 14px auto 0;
+  padding: 18px 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(8px);
+}
+
+.navbar h2 {
+  margin: 0;
+  color: #f7f9fc;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-links a {
+  color: var(--text-soft);
+  padding: 10px 14px;
+  border-radius: 999px;
+  transition: all 0.22s ease;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.nav-links a.active,
+.nav-links a[aria-current="page"] {
+  color: #0d1728;
+  background: var(--accent);
+}
+
+/* GENERAL */
+.page-content {
+  padding-top: 12px;
+}
+
+.page-content > h1,
+.inner-page-header h1,
+h1 {
+  margin: 0 0 10px;
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #f7f9fc;
+  letter-spacing: -0.03em;
+}
+
+.page-content > p,
+.inner-page-header p,
+p {
+  color: var(--text-soft);
+}
+
+.inner-page-header {
+  margin-bottom: 24px;
+}
+
+.inner-page-header p {
+  margin: 0;
+  color: var(--text-soft);
+}
+
+/* NEWS GRID */
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.news-card {
+  background: linear-gradient(180deg, var(--bg-card) 0%, var(--bg-card-2) 100%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+.news-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(212, 165, 116, 0.28);
+  box-shadow: 0 22px 46px rgba(0, 0, 0, 0.32);
+}
+
+.news-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-bottom: 1px solid var(--border);
+}
+
+.news-content {
+  padding: 22px;
+}
+
+.news-content h3 {
+  margin: 0 0 14px;
+  color: #f8fafc;
+  font-size: 1.42rem;
+  line-height: 1.28;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.news-content p {
+  margin: 0 0 10px;
+  color: var(--text-soft);
+  font-size: 0.98rem;
+}
+
+.news-content strong {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.news-content a {
+  display: inline-block;
+  margin-top: 12px;
+  color: var(--accent);
+  font-weight: 700;
+  transition: color 0.2s ease;
+}
+
+.news-content a:hover {
+  color: #ebbe91;
+}
+
+/* SEARCH + FILTER */
+.search-bar input,
+.filter-panel select {
+  width: 100%;
+  max-width: 420px;
+  padding: 14px 16px;
+  margin: 10px 0;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.035);
+  color: #f5f8fc;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.search-bar input:focus,
+.filter-panel select:focus {
+  border-color: rgba(212, 165, 116, 0.45);
+  box-shadow: 0 0 0 4px rgba(212, 165, 116, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.search-bar input::placeholder {
+  color: var(--text-muted);
+}
+
+.filter-panel select {
+  cursor: pointer;
+}
+
+/* FORMS / PANELS */
+.preferences-form,
+.saved-box,
+.article-detail-card {
+  background: linear-gradient(180deg, var(--bg-card) 0%, var(--bg-card-2) 100%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 26px;
+  box-shadow: var(--shadow);
+}
+
+.preferences-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 380px;
+  margin-top: 18px;
+}
+
+.preferences-form label {
+  color: #d9e2ee;
+}
+
+.preferences-form input[type="checkbox"] {
+  accent-color: var(--accent-strong);
+  margin-right: 10px;
+}
+
+.preferences-form button {
+  border: none;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 100%);
+  color: #0d1728;
+  padding: 14px 18px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-weight: 700;
+  margin-top: 6px;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.preferences-form button:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.03);
+}
+
+.saved-box p,
+.empty-text,
+.loader-text {
+  color: var(--text-soft);
+}
+
+/* ARTICLE DETAILS */
+.article-detail-card h1 {
+  margin: 14px 0 18px;
+  font-size: 2.2rem;
+  color: #f8fafc;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+
+.article-detail-card img,
+.article-detail-image,
+img[alt] {
+  border-radius: 18px;
+}
+
+.article-detail-image {
+  width: 100%;
+  max-height: 480px;
+  object-fit: cover;
+  margin-bottom: 18px;
+}
+
+.article-meta {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  color: #c6d2e4;
+}
+
+.article-detail-summary {
+  color: #d2dbea;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+/* SMALL ENHANCEMENTS */
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+}
+
+::selection {
+  background: rgba(212, 165, 116, 0.22);
+  color: #ffffff;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 768px) {
+  .container,
+  .navbar {
+    width: 94%;
+  }
+
+  .navbar h2 {
+    font-size: 1.6rem;
+  }
+
+  h1,
+  .page-content > h1,
+  .inner-page-header h1 {
+    font-size: 2rem;
+  }
+
+  .news-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .news-card img {
+    height: 210px;
+  }
+}
+/* BOOKMARK ICON */
+.bookmark-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bookmark-icon {
+  width: 22px;
+  height: 22px;
+  stroke: var(--accent);
+  fill: transparent;
+  stroke-width: 2;
+  transition: all 0.2s ease;
+}
+
+.bookmark-btn:hover .bookmark-icon {
+  stroke: #ebbe91;
+}
+
+.bookmark-btn.saved .bookmark-icon {
+  fill: #0d1728;
+  stroke: #0d1728;
+}
